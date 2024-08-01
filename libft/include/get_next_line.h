@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/22 15:46:42 by azinchen          #+#    #+#             */
-/*   Updated: 2024/07/22 16:16:36 by azinchen         ###   ########.fr       */
+/*   Created: 2024/06/13 15:36:01 by azinchen          #+#    #+#             */
+/*   Updated: 2024/06/13 15:36:06 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <stdbool.h>
-# include <stddef.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include <limits.h>
 
-typedef struct s_stack_node
-{
-    int n;
-    int index;
-    struct s_stack_node *next;
-    struct s_stack_node *prev;
-} t_stack_node;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+char	*get_next_line(int fd);
+size_t	ft_strlen(const char *str);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin_stash(char *stash, char *buf);
+char	*ft_substr(char *stash, unsigned int start, size_t len);
+size_t	find_nl(char *stash);
 
 #endif
