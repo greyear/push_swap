@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 20:30:49 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/01 18:07:13 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/09 17:10:42 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_isdigit(int c) //Delete it and use one from libft for sake of god!
 	return (0);
 }
 
-int is_wrong_input(char *str)  //should it be in error_utils or in creating_stack?
+static int is_wrong_input(char *str)  //should it be in error_utils? static?
 {
 	int i;
 
@@ -105,6 +105,21 @@ void    create_stack(t_stack_node **stack, char *argv[])
 		if (is_in_stack(*stack, num))
 			print_error_and_exit(stack);
 		add_node_back(stack, num);
+		i++;
+	}
+}
+
+void	put_index(t_stack_node *stack) //Do we need some more variables? If yes, add them. If no, think about putting this functionality into other function
+{
+	int	i;
+
+	if (!stack)
+		return ;
+	i = 0;
+	while (stack)
+	{
+		stack->index = i;
+		stack = stack->next;
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 15:40:32 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/01 18:08:33 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/08 21:44:20 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,14 @@ int stack_len(t_stack_node *stack)
 		len++;
 	}
 	return (len);
+}
+
+int	above_median(t_stack_node *stack, t_stack_node *checked_node)
+{
+	int	median;
+
+	median = stack_len(stack) / 2;
+	if (checked_node->index <= median)
+		return (1);
+	return (0);
 }

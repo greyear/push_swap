@@ -6,14 +6,16 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:56:12 by azinchen          #+#    #+#             */
-/*   Updated: 2024/04/26 17:30:33 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/10 20:09:09 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stdlib.h>
 # include <stddef.h>
+# include <limits.h>
 # include <fcntl.h>
 # include <unistd.h>
 
@@ -28,6 +30,8 @@ int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
+int				ft_issign(int c);
+int				ft_isspace(int c);
 size_t			ft_strlen(const char *str);
 void			*ft_memset(void *b, int c, size_t n);
 void			ft_bzero(void *s, size_t n);

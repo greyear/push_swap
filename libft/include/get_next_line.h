@@ -6,9 +6,10 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:36:01 by azinchen          #+#    #+#             */
-/*   Updated: 2024/06/13 15:36:06 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/10 19:45:44 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 

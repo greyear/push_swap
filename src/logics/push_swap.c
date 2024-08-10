@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 16:07:35 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/01 18:16:48 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/10 19:22:36 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,19 @@ int main(int argc, char *argv[])
 	if (argc == 1 || (argc == 2 && !argv[1][0])) //second argument is what exactly? \0?
 		return (1); //error message code? can be -1?
 	else if (argc == 2)
-		argv  = ft_split(argv[1], ' '); //nuzhen ne ft_split, a split!
-	//code
+		argv  = custom_split(argv[1], ' '); //nuzhen ne ft_split, a split!
+	create_stack(&a, argv + 1); //I don't understand why +1 WHEN WE HAVE 2 ARGUMENTS
+	if (!is_sorted(a))
+	{
+		if (stack_len(a) == 2)
+			sa(&a);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
+			sort_more(&a, &b);
+	}
+	free_stack(&a);
+	//why shouldn't we free b?
+	//free_stack(&b);
 	return (0);
 }

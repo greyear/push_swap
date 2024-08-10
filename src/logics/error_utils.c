@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 16:00:37 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/01 18:07:16 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/09 17:40:02 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int is_in_stack(t_stack_node *stack, int num) //why here int then instead of lon
 	return (0);
 }
 
-void    free_stack(t_stack_node **stack)
+void	free_stack(t_stack_node **stack)
 {
 	t_stack_node    *next_node;
 	t_stack_node    *cur_node;
@@ -46,7 +46,7 @@ void    free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
-void    print_error_and_exit(t_stack_node **stack)
+void	print_error_and_exit(t_stack_node **stack)
 {
 	free_stack(stack);
 	ft_printf("Error\n");

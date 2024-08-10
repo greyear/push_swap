@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_utils.c                                    :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 14:40:50 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/01 18:08:20 by azinchen         ###   ########.fr       */
+/*   Created: 2024/08/09 18:52:03 by azinchen          #+#    #+#             */
+/*   Updated: 2024/08/10 19:46:16 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ static void sort_three_checks(t_stack_node **stack, int a, int b, int c)
 		return ;
 	else if (a < b && a < c && b > c) //132
 	{
-		sa(*stack);
-		ra(*stack);
+		sa(stack);
+		ra(stack);
 	}
 	else if (a > b && a < c && b < c) //213
-		sa(*stack);
+		sa(stack);
 	else if (a < b && a > c && b > c) //231
-		rra(*stack);
+		rra(stack);
 	else if (a > b && a > c && b < c) //312
-		ra(*stack);
+		ra(stack);
 	else if (a > b && a > c && b > c) //321
 	{
-		sa(*stack);
-		rra(*stack);
+		sa(stack);
+		rra(stack);
 	}   
 }
 
