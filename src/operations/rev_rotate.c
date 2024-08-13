@@ -14,13 +14,11 @@
 
 static void	rev_rotate(t_stack_node **stack)
 {
-	t_stack_node	*first;
 	t_stack_node	*last;
 	t_stack_node	*cur_list;
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	first = *stack;
 	last = last_elem(*stack);
 	cur_list = *stack;
 	while (cur_list != NULL)
