@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 14:53:53 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/10 19:21:43 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/13 19:49:08 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include "../../include/push_swap.h"
 #include <stdbool.h>
+#include <stdio.h>
 
 static int	count_words(char *s, char c) //Define a function that returns the substrings count in a string seperated by a delimiter
 {
@@ -58,6 +59,7 @@ static char	*get_next_word(char *s, char c) //Define a function that returns the
 	while ((s[cursor] != c) && s[cursor]) //Loop until a delimeter is encountered and the end of the string is reached
 		next_word[i++] = s[cursor++]; //Copy each character from the string to the new substring and increment `i` and `cursor` after each character
 	next_word[i] = '\0'; //Properly null terminate the newly created substring
+	printf("%s", next_word);
 	return (next_word);
 }
 
