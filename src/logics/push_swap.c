@@ -22,11 +22,11 @@ int main(int argc, char *argv[])
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0])) //second argument is what exactly? \0?
-		return (1); //error message code? can be -1?
+		return (1); // can be -1?
 	numbers = argv + 1;
 	if (argc == 2)
 		numbers = ft_split(argv[1], ' ');
-	create_stack(&a, numbers); //+1 WHEN WE HAVE 2 ARGUMENTS
+	create_stack(&a, numbers);
 	int i = 0;
 	t_stack_node *cur = a;
 	while (cur != NULL)
