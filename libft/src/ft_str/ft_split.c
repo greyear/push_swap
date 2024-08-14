@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
+#include <stdio.h> //delete!
 
 static int	ft_clean(char **array, int size)
 {
@@ -77,6 +78,7 @@ static int	ft_array(char **array, const char *str, char c)
 			if (!array[index])
 				return (ft_clean(array, index));
 			ft_elem(array[index], str, i, c);
+			//printf("%d - %s ", index, array[index]); //delete!
 			i = i + j;
 			index++;
 		}
@@ -98,3 +100,12 @@ char	**ft_split(const char *str, char c)
 	res[count] = 0;
 	return (res);
 }
+/*
+int main(int argc, char *argv[])
+{
+	if (argc == 1 || (argc == 2 && !argv[1][0])) //second argument is what exactly? \0?
+		return (1); //error message code? can be -1?
+	else if (argc == 2)
+		argv  = ft_split(argv[1], ' '); //nuzhen ne ft_split, a split!
+	return (0);
+}*/

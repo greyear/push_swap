@@ -46,9 +46,6 @@ int				is_in_stack(t_stack_node *stack, int num);
 void			free_stack(t_stack_node **stack);
 void			print_error_and_exit(t_stack_node **stack);
 
-//Split
-char			**custom_split(char *s, char c);
-
 //Stack
 void			create_stack(t_stack_node **stack, char *argv[]);
 void			put_index(t_stack_node *stack);
@@ -69,6 +66,6 @@ void			put_fields_b(t_stack_node *a, t_stack_node *b);
 
 //Sorting
 void			sort_three(t_stack_node **stack);
-void			sort_more(t_stack_node **a, t_stack_node **b);
+void			sort_all(t_stack_node **a, t_stack_node **b);
 
 #endif

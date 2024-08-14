@@ -73,6 +73,7 @@ static void add_node_back(t_stack_node **stack, int num)
 		return ;
 	//which variables in list we should fill in? all of them or can we set up values only for n and next?
 	new_node->n = num;
+	
 	new_node->next = NULL;
 	if (!(*stack))
 	{
@@ -98,7 +99,7 @@ void    create_stack(t_stack_node **stack, char *argv[])
 	{
 		if (is_wrong_input(argv[i]))
 			print_error_and_exit(stack);
-		lnum = ft_atol(argv[1]);
+		lnum = ft_atol(argv[i]);
 		if (lnum < INT_MIN || lnum > INT_MAX)
 			print_error_and_exit(stack);
 		num = (int)lnum;

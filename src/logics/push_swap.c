@@ -11,28 +11,31 @@
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
 	t_stack_node    *a;
 	t_stack_node    *b;
+	char			**numbers;
 
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0])) //second argument is what exactly? \0?
 		return (1); //error message code? can be -1?
-	else if (argc == 2)
-		argv  = custom_split(argv[1], ' '); //nuzhen ne ft_split, a split!
-	create_stack(&a, argv + 1); //+1 WHEN WE HAVE 2 ARGUMENTS
-	if (!is_sorted(a))
+	numbers = argv + 1;
+	if (argc == 2)
+		numbers = ft_split(argv[1], ' ');
+	create_stack(&a, numbers); //+1 WHEN WE HAVE 2 ARGUMENTS
+	int i = 0;
+	t_stack_node *cur = a;
+	while (cur != NULL)
 	{
-		if (stack_len(a) == 2)
-			sa(&a);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
-		else
-			sort_more(&a, &b);
+		printf("%d - %d\n", i, cur->n);
+		cur = cur->next;
+		i++;
 	}
+	sort_all(&a, &b);
 	free_stack(&a);
 	//why shouldn't we free b?
 	//free_stack(&b);

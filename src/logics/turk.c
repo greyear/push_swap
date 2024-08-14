@@ -69,7 +69,7 @@ static void	min_first(t_stack_node **stack)
 	}
 }
 
-void	sort_more(t_stack_node **a, t_stack_node **b)
+static void	sort_more(t_stack_node **a, t_stack_node **b)
 {
 	int	len;
 
@@ -92,4 +92,17 @@ void	sort_more(t_stack_node **a, t_stack_node **b)
 	}
 	put_index(*a);
 	min_first(a);
+}
+
+void	sort_all(t_stack_node **a, t_stack_node **b)
+{
+	if (!is_sorted(*a))
+	{
+		if (stack_len(*a) == 2)
+			sa(a);
+		else if (stack_len(*a) == 3)
+			sort_three(a);
+		else
+			sort_more(a, b);
+	}
 }

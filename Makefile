@@ -40,7 +40,6 @@ LOGICS_DIR			=	$(SRC_DIR)logics/push_swap.c \
 										$(SRC_DIR)logics/sort_three.c \
 										$(SRC_DIR)logics/creating_stack.c \
 										$(SRC_DIR)logics/stack_utils.c \
-										$(SRC_DIR)logics/custom_split.c \
 										$(SRC_DIR)logics/error_utils.c
 
 SRC 		=	$(OPERATIONS_DIR) $(LOGICS_DIR)
