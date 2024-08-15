@@ -6,3 +6,6 @@
 *.dSYM/
 .push_swap
 .vscode
+push_swap
+checker_linux
+obj
