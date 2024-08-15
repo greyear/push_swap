@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 15:46:42 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/10 19:22:14 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:13:46 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_stack_node
 	int					n;
 	int					index;
 	struct s_stack_node	*next;
-	struct s_stack_node	*prev; //Maybe I don't need it even. Try to write rev rotate first!!
+	//struct s_stack_node	*prev; //Maybe I don't need it even. Try to write rev rotate first!!
 	struct s_stack_node	*target;
 	int					cost;
 }	t_stack_node;

@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 20:30:49 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/09 17:10:42 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:14:29 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,18 +73,17 @@ static void add_node_back(t_stack_node **stack, int num)
 		return ;
 	//which variables in list we should fill in? all of them or can we set up values only for n and next?
 	new_node->n = num;
-	
 	new_node->next = NULL;
 	if (!(*stack))
 	{
 		*stack = new_node;
-		new_node->prev = NULL;
+		//new_node->prev = NULL;
 	}
 	else
 	{
 		last_node = last_elem(*stack);
 		last_node->next = new_node;
-		new_node->prev = last_node;
+		//new_node->prev = last_node;
 	}
 }
 

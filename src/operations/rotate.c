@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 15:26:41 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/01 18:28:30 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:35:19 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ static void	rotate(t_stack_node **stack) //do we need to return error code for a
 	*stack = first->next;
 	last->next = first;
 	first->next = NULL;
-	//Do I need to add prev connections here? Will it work like this?
-	//first->prev = last;
-	//How can put prev=NULL for the new first?
 }
 
 //What the fuck is the idea of using bool variables as an input for NOT printing instructions? I don't get it!

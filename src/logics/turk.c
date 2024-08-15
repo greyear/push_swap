@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 19:41:41 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/15 17:54:20 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:05:09 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	min_first(t_stack_node **stack)
 	min = min_elem(*stack);
 	while (*stack != min)
 	{
-		if ((min)->index <= median)
+		if (min->index <= median)
 			ra(stack);
 		else
 			rra(stack);

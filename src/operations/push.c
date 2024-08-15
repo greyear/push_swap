@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 15:05:45 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/07 16:32:18 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:32:03 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	push(t_stack_node **src, t_stack_node **dst) //Check prev variable i
 	if (!*dst)
 	{
 		*dst = buf;
-		(*dst)->next = NULL; //or buf, it doesn't matter!!
+		(*dst)->next = NULL;
 	}
 	else
 	{

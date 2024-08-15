@@ -35,16 +35,13 @@ static int	moves_to_top(t_stack_node *stack, t_stack_node *required_node)
 void make_top_a(t_stack_node **stack, t_stack_node *future_top)//static?
 {
 	//protections? !stack, !(*stack), !future_top
-	//t_stack_node	*cur_node;
 	int				size;
 	int				moves_up;
 	int				moves_down;
 
-	//cur_node = *stack;
 	size = stack_len(*stack);
 	moves_up = moves_to_top(*stack, future_top);
 	moves_down = size - moves_up;
-
 	if (moves_up == 0)
 		return ;
 	if (moves_up <= (size / 2))
@@ -63,16 +60,13 @@ void make_top_a(t_stack_node **stack, t_stack_node *future_top)//static?
 void make_top_b(t_stack_node **stack, t_stack_node *future_top)//static?
 {
 	//protections? !stack, !(*stack), !future_top
-	//t_stack_node	*cur_node;
 	int				size;
 	int				moves_up;
 	int				moves_down;
 
-	//cur_node = *stack;
 	size = stack_len(*stack);
 	moves_up = moves_to_top(*stack, future_top);
 	moves_down = size - moves_up;
-
 	if (moves_up == 0)
 		return ;
 	if (moves_up <= (size / 2))
