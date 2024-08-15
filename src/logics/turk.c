@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 19:41:41 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/10 19:27:46 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/15 17:54:20 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	min_first(t_stack_node **stack)
 	min = min_elem(*stack);
 	while (*stack != min)
 	{
-		if ((*stack)->index <= median)
+		if ((min)->index <= median)
 			ra(stack);
 		else
 			rra(stack);
@@ -75,11 +75,11 @@ static void	sort_more(t_stack_node **a, t_stack_node **b)
 
 	len = stack_len(*a);
 	//Need more explanations about if-if-while with same condition
-	if (!(is_sorted(*a) && len-- > 3))
+	if (!is_sorted(*a) && len-- > 3)
 		pb(a, b);
-	if (!(is_sorted(*a) && len-- > 3))
+	if (!is_sorted(*a) && len-- > 3)
 		pb(a, b); //How not to double code??
-	while (!(is_sorted(*a) && len-- > 3))
+	while (!is_sorted(*a) && len-- > 3)
 	{
 		put_fields_a(*a, *b);
 		push_cheapest_to_b(a, b);

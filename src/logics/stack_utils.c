@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 15:40:32 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/08 21:44:20 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/15 17:41:03 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_stack_node    *min_elem(t_stack_node *stack)
 	min_node = stack;
 	min_val = min_node->n;
 	cur_node = stack;
-	while (cur_node->next)
+	while (cur_node)
 	{
 		if (cur_node->n < min_val)
 		{
@@ -74,7 +74,7 @@ t_stack_node    *max_elem(t_stack_node *stack)
 	max_node = stack;
 	max_val = max_node->n;
 	cur_node = stack;
-	while (cur_node->next)
+	while (cur_node)
 	{
 		if (cur_node->n > max_val)
 		{

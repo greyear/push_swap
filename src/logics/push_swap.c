@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 16:07:35 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/13 19:34:10 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:01:28 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int main(int argc, char *argv[])
 	if (argc == 2)
 		numbers = ft_split(argv[1], ' ');
 	create_stack(&a, numbers);
-	int i = 0;
+	/*int i = 0;
 	t_stack_node *cur = a;
 	while (cur != NULL)
 	{
 		printf("%d - %d\n", i, cur->n);
 		cur = cur->next;
 		i++;
-	}
+	}*/
 	sort_all(&a, &b);
 	free_stack(&a);
 	//why shouldn't we free b?
