@@ -46,9 +46,29 @@ void	free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
-void	print_error_and_exit(t_stack_node **stack)
+void	free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+
+void	error_and_exit(void)
+{
+	write(2, "Error\n", 6);
+	exit(1); //1 or -1? 1 is more common, -1 is used e.g. in printf
+}
+
+void	cleanup_exit(t_stack_node **stack, char **numbers, int clean_numbers)
 {
 	free_stack(stack);
-	ft_printf("Error\n");
-	exit(1); //1 or -1? 1 is more common, -1 is used e.g. in printf
+	if (clean_numbers == 1)
+		free_array(numbers);
+	error_and_exit();
 }

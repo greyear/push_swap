@@ -92,6 +92,8 @@ char	**ft_split(const char *str, char c)
 	int		count;
 
 	count = ft_count(str, c);
+	if (count == 0)
+		return (NULL);
 	res = (char **)malloc((count + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);

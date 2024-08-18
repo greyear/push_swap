@@ -44,10 +44,12 @@ void			rrr(t_stack_node **a, t_stack_node **b);
 //Error utils
 int				is_in_stack(t_stack_node *stack, int num);
 void			free_stack(t_stack_node **stack);
-void			print_error_and_exit(t_stack_node **stack);
+void			free_array(char **array);
+void			error_and_exit(void);
+void			cleanup_exit(t_stack_node **stack, char **numbers, int clean_numbers);
 
 //Stack
-void			create_stack(t_stack_node **stack, char *argv[]);
+void			create_stack(t_stack_node **stack, char **numbers, int clean_numbers);
 void			put_index(t_stack_node *stack);
 int				is_sorted(t_stack_node *stack);
 t_stack_node	*last_elem(t_stack_node *stack);

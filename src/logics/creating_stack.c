@@ -87,26 +87,28 @@ static void add_node_back(t_stack_node **stack, int num)
 	}
 }
 
-void    create_stack(t_stack_node **stack, char *argv[])
+void    create_stack(t_stack_node **stack, char **numbers, int clean_numbers)
 {
 	int     i;
 	long    lnum;
 	int     num;
 	
 	i = 0;
-	while (argv[i])
+	while (numbers[i])
 	{
-		if (is_wrong_input(argv[i]))
-			print_error_and_exit(stack);
-		lnum = ft_atol(argv[i]);
+		if (is_wrong_input(numbers[i]))
+			cleanup_exit(stack, numbers, clean_numbers);
+		lnum = ft_atol(numbers[i]);
 		if (lnum < INT_MIN || lnum > INT_MAX)
-			print_error_and_exit(stack);
+			cleanup_exit(stack, numbers, clean_numbers);
 		num = (int)lnum;
 		if (is_in_stack(*stack, num))
-			print_error_and_exit(stack);
+			cleanup_exit(stack, numbers, clean_numbers);
 		add_node_back(stack, num);
 		i++;
 	}
+	if (clean_numbers)
+		free_array(numbers);
 }
 
 void	put_index(t_stack_node *stack) //Do we need some more variables? If yes, add them. If no, think about putting this functionality into other function
