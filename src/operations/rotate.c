@@ -6,16 +6,16 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 15:26:41 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/15 18:35:19 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/19 19:38:49 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-static void	rotate(t_stack_node **stack) //do we need to return error code for all operations?
+static void	rotate(t_stack **stack)
 {
-	t_stack_node	*first;
-	t_stack_node	*last;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
@@ -26,22 +26,29 @@ static void	rotate(t_stack_node **stack) //do we need to return error code for a
 	first->next = NULL;
 }
 
-//What the fuck is the idea of using bool variables as an input for NOT printing instructions? I don't get it!
-void	ra(t_stack_node **a)
+void	ra(t_stack **a)
 {
 	rotate(a);
 	ft_printf("ra\n");
 }
 
-void	rb(t_stack_node **b)
+void	rb(t_stack **b)
 {
 	rotate(b);
 	ft_printf("rb\n");
 }
 
-void	rr(t_stack_node **a, t_stack_node **b)
+void	rr(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
 	ft_printf("rr\n");
+}
+
+void	rr_and_refresh(t_stack **a, t_stack **b, t_stack *cheapest)
+{
+	while (*a != cheapest && *b != cheapest->target)
+		rr(a, b);
+	put_index(*a);
+	put_index(*b);
 }

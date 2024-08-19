@@ -6,7 +6,7 @@
 #    By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/10 16:12:25 by azinchen          #+#    #+#              #
-#    Updated: 2024/08/13 14:37:14 by azinchen         ###   ########.fr        #
+#    Updated: 2024/08/19 20:31:24 by azinchen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ LOGICS_DIR			=	$(SRC_DIR)logics/push_swap.c \
 										$(SRC_DIR)logics/moving_costs.c \
 										$(SRC_DIR)logics/sort_three.c \
 										$(SRC_DIR)logics/creating_stack.c \
+										$(SRC_DIR)logics/stack_fields.c \
+										$(SRC_DIR)logics/stack_elem.c \
 										$(SRC_DIR)logics/stack_utils.c \
 										$(SRC_DIR)logics/error_utils.c
 

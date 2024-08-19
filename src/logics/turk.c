@@ -6,32 +6,16 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 19:41:41 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/15 18:05:09 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/19 19:47:39 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-static void	rr_and_refresh(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest)
+static void	push_cheapest_to_b(t_stack **a, t_stack **b)
 {
-	while (*a != cheapest && *b != cheapest->target)
-		rr(a, b);
-	put_index(*a);
-	put_index(*b);
-}
-
-static void	rrr_and_refresh(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest)
-{
-	while (*a != cheapest && *b != cheapest->target)
-		rrr(a, b);
-	put_index(*a);
-	put_index(*b);
-}
-
-static void	push_cheapest_to_b(t_stack_node **a, t_stack_node **b)
-{
-	t_stack_node	*cheapest;
-	t_stack_node	*target;
+	t_stack	*cheapest;
+	t_stack	*target;
 
 	cheapest = cheapest_node(*a);
 	target = cheapest->target;
@@ -44,19 +28,20 @@ static void	push_cheapest_to_b(t_stack_node **a, t_stack_node **b)
 	pb(a, b);
 }
 
-static void	push_cheapest_to_a(t_stack_node **a, t_stack_node **b)
+static void	push_cheapest_to_a(t_stack **a, t_stack **b)
 {
-	t_stack_node	*target;
+	t_stack	*target;
 
 	target = (*b)->target;
 	make_top_a(a, target);
 	pa(a, b);
 }
+
 //how to apply above_median function?
-static void	min_first(t_stack_node **stack)
+static void	min_first(t_stack **stack)
 {
-	t_stack_node	*min;
-	int				median;
+	t_stack	*min;
+	int		median;
 
 	median = stack_len(*stack) / 2;
 	min = min_elem(*stack);
@@ -69,16 +54,15 @@ static void	min_first(t_stack_node **stack)
 	}
 }
 
-static void	sort_more(t_stack_node **a, t_stack_node **b)
+static void	sort_more(t_stack **a, t_stack **b)
 {
 	int	len;
 
 	len = stack_len(*a);
-	//Need more explanations about if-if-while with same condition
 	if (!is_sorted(*a) && len-- > 3)
 		pb(a, b);
 	if (!is_sorted(*a) && len-- > 3)
-		pb(a, b); //How not to double code??
+		pb(a, b);
 	while (!is_sorted(*a) && len-- > 3)
 	{
 		put_fields_a(*a, *b);
@@ -94,7 +78,7 @@ static void	sort_more(t_stack_node **a, t_stack_node **b)
 	min_first(a);
 }
 
-void	sort_all(t_stack_node **a, t_stack_node **b)
+void	sort_all(t_stack **a, t_stack **b)
 {
 	if (!is_sorted(*a))
 	{

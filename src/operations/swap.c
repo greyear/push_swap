@@ -6,16 +6,17 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 20:36:41 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/15 18:36:14 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/19 18:24:48 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-static void	swap(t_stack_node **stack)
+static void	swap(t_stack **stack)
 {
 	int	buf_n;
 	int	buf_index;
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	buf_n = (*stack)->n;
@@ -26,19 +27,19 @@ static void	swap(t_stack_node **stack)
 	((*stack)->next)->index = buf_index;
 }
 
-void	sa(t_stack_node **a)//bool??
+void	sa(t_stack **a)
 {
 	swap(a);
 	ft_printf("sa\n");
 }
 
-void	sb(t_stack_node **b)//bool??
+void	sb(t_stack **b)
 {
 	swap(b);
 	ft_printf("sb\n");
 }
 
-void	ss(t_stack_node **a, t_stack_node **b)
+void	ss(t_stack **a, t_stack **b)
 {
 	swap(a);
 	swap(b);

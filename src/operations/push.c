@@ -6,15 +6,16 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 15:05:45 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/15 18:32:03 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/19 18:23:14 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-static void	push(t_stack_node **src, t_stack_node **dst) //Check prev variable if needed?
+static void	push(t_stack **src, t_stack **dst)
 {
-	t_stack_node	*buf;
+	t_stack	*buf;
+
 	if (!*src)
 		return ;
 	buf = *src;
@@ -31,14 +32,13 @@ static void	push(t_stack_node **src, t_stack_node **dst) //Check prev variable i
 	}
 }
 
-void	pa(t_stack_node **a, t_stack_node **b)//bool?
+void	pa(t_stack **a, t_stack **b)
 {
 	push(b, a);
 	ft_printf("pa\n");
 }
 
-//Does the order matter here? I think I put it right in input
-void	pb(t_stack_node **a, t_stack_node **b)//bool?
+void	pb(t_stack **a, t_stack **b)
 {
 	push(a, b);
 	ft_printf("pb\n");
