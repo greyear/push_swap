@@ -12,13 +12,12 @@
 
 #include "../../include/push_swap.h"
 
-void	make_top_a(t_stack **stack, t_stack *future_top)//static?
+void	make_top_a(t_stack **stack, t_stack *future_top)
 {
 	int	size;
 	int	moves_up;
 	int	moves_down;
 
-	//protections? !stack, !(*stack), !future_top
 	size = stack_len(*stack);
 	moves_up = moves_to_top(*stack, future_top);
 	moves_down = size - moves_up;
@@ -36,14 +35,12 @@ void	make_top_a(t_stack **stack, t_stack *future_top)//static?
 	}
 }
 
-//can I combine these 2 functions without using damn extra field above_median? 
-void	make_top_b(t_stack **stack, t_stack *future_top)//static?
+void	make_top_b(t_stack **stack, t_stack *future_top)
 {
 	int	size;
 	int	moves_up;
 	int	moves_down;
 
-	//protections? !stack, !(*stack), !future_top
 	size = stack_len(*stack);
 	moves_up = moves_to_top(*stack, future_top);
 	moves_down = size - moves_up;
@@ -66,8 +63,6 @@ static int	push_cost_one(t_stack *stack, t_stack *required_node)
 	int	size;
 	int	moves_up;
 
-	if (!stack || !required_node)
-		return (-1); //?
 	size = stack_len(stack);
 	moves_up = moves_to_top(stack, required_node);
 	if (moves_up == 0)
@@ -77,17 +72,14 @@ static int	push_cost_one(t_stack *stack, t_stack *required_node)
 	return (size - moves_up);
 }
 
-void	push_cost_both(t_stack *a, t_stack *b)//-1 and int output?
+void	push_cost_both(t_stack *a, t_stack *b)
 {
 	t_stack	*cur_a;
 
-	if (!a || !b)
-		return ;
 	cur_a = a;
 	while (cur_a)
 	{
 		cur_a->cost = push_cost_one(a, cur_a);
-		//Do we need any check for a->target? What if it doesn't exist?
 		cur_a->cost += push_cost_one(b, cur_a->target);
 		cur_a = cur_a->next;
 	}

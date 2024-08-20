@@ -12,7 +12,7 @@
 
 #include "../../include/push_swap.h"
 
-int	is_in_stack(t_stack *stack, int num) //why here int then instead of long?
+int	is_in_stack(t_stack *stack, int num)
 {
 	t_stack	*cur_node;
 
@@ -62,7 +62,7 @@ void	free_array(char **array)
 void	error_and_exit(void)
 {
 	write(2, "Error\n", 6);
-	exit(1);//1 or -1? 1 is more common, -1 is used e.g. in printf
+	exit(1);
 }
 
 void	cleanup_exit(t_stack **stack, char **num, int clean_num)

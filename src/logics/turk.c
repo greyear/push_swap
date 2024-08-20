@@ -37,7 +37,6 @@ static void	push_cheapest_to_a(t_stack **a, t_stack **b)
 	pa(a, b);
 }
 
-//how to apply above_median function?
 static void	min_first(t_stack **stack)
 {
 	t_stack	*min;

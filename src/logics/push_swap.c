@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-//check error codes in functions!
 
 int	main(int argc, char *argv[])
 {
@@ -23,16 +22,15 @@ int	main(int argc, char *argv[])
 	b = NULL;
 	if (argc == 1)
 		return (0);
-	if (argc == 2 && !argv[1][0]) //second argument is what exactly? \0?
-		error_and_exit(); // can be -1? //WHAT SHOULD BE HERE IF 0 ARGs???
+	if (argc == 2 && !argv[1][0])
+		error_and_exit();
 	numbers = argv + 1;
 	if (argc == 2)
 		numbers = ft_split(argv[1], ' ');
 	if (numbers == NULL)
-		error_and_exit(); //WHAT should be with "" and what with " "???
+		error_and_exit();
 	create_stack(&a, numbers, argc == 2);
 	sort_all(&a, &b);
 	free_stack(&a);
-	//free_stack(&b);
 	return (0);
 }

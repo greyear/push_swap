@@ -21,8 +21,7 @@ static int	is_wrong_input(char *str)
 	if (ft_issign(str[0]) && !(ft_isdigit(str[1])))
 		return (1);
 	i = 0;
-	while (str[++i]) //is the incrementation here bc we already checked
-	// the first symbol? Ans what about the last one then?
+	while (str[++i])
 	{
 		if (!(ft_isdigit(str[i])))
 			return (1);
@@ -30,11 +29,11 @@ static int	is_wrong_input(char *str)
 	return (0);
 }
 
-static long	ft_atol(const char *str) //What if bigger than long?
+static int	ft_custom_atoi(const char *str, int *number)
 {
-	long	res;
-	int		sign;
+	long	sign;
 	int		i;
+	long	res;
 
 	i = 0;
 	sign = 1;
@@ -44,8 +43,13 @@ static long	ft_atol(const char *str) //What if bigger than long?
 		sign = -1;
 	res = 0;
 	while (ft_isdigit(str[i]))
-		res = res * 10 + (str[i++] - '0'); // handle long overflows?
-	return (sign * res);
+	{
+		res = res * 10 + (str[i++] - '0');
+		if (res * sign < (long)INT_MIN || res * sign > (long)INT_MAX)
+			return (1);
+	}
+	*number = (int)sign * res;
+	return (0);
 }
 
 static void	add_node_back(t_stack **stack, int num)
@@ -74,7 +78,7 @@ static void	add_node_back(t_stack **stack, int num)
 void	create_stack(t_stack **stack, char **num, int clean_num)
 {
 	int		i;
-	long	ln;
+	int		err;
 	int		n;
 
 	i = 0;
@@ -82,10 +86,9 @@ void	create_stack(t_stack **stack, char **num, int clean_num)
 	{
 		if (is_wrong_input(num[i]))
 			cleanup_exit(stack, num, clean_num);
-		ln = ft_atol(num[i]);
-		if (ln < INT_MIN || ln > INT_MAX)
+		err = ft_custom_atoi(num[i], &n);
+		if (err != 0)
 			cleanup_exit(stack, num, clean_num);
-		n = (int)ln;
 		if (is_in_stack(*stack, n))
 			cleanup_exit(stack, num, clean_num);
 		add_node_back(stack, n);
@@ -99,7 +102,7 @@ int	moves_to_top(t_stack *stack, t_stack *required_node)
 {
 	t_stack	*cur_node;
 	int		res;
-	//protections? !stack, !required_node. what to return, -1?
+
 	res = 0;
 	cur_node = stack;
 	while (cur_node)

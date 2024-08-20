@@ -29,7 +29,6 @@ t_stack	*min_elem(t_stack *stack)
 	t_stack	*cur_node;
 	t_stack	*min_node;
 	int		min_val;
-	//in repo long is used here
 
 	if (!stack)
 		return (NULL);
