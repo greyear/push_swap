@@ -6,7 +6,7 @@
 #    By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 12:03:15 by azinchen          #+#    #+#              #
-#    Updated: 2024/08/12 21:13:21 by azinchen         ###   ########.fr        #
+#    Updated: 2024/08/20 21:25:45 by azinchen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,22 +94,22 @@ SRC 			=	$(FTIS_DIR) $(FTLST_DIR) $(FTMEM_DIR) $(FTPUT_DIR) $(FTSTR_DIR) $(FTTO_
 OBJ 			=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRC))
 
 #Build rules
-all: 		$(NAME)
+all: 			$(NAME)
 
-$(NAME): 	$(OBJ)
-			@$(AR) $(NAME) $(OBJ)
+$(NAME): 		$(OBJ)
+				@$(AR) $(NAME) $(OBJ)
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
-			@mkdir -p $(@D)
-			@$(CC) $(CFLAGS) $(INCLUDE_DIR) -c $< -o $@
+				@mkdir -p $(@D)
+				@$(CC) $(CFLAGS) $(INCLUDE_DIR) -c $< -o $@
 
 clean:
-			@$(RM) -r $(OBJ_DIR)
-			@$(RM) .cache_exists
+				@$(RM) -r $(OBJ_DIR)
+				@$(RM) .cache_exists
 		
-fclean: 	clean 
-			@$(RM) $(NAME)
+fclean: 		clean 
+				@$(RM) $(NAME)
 			
-re: 		fclean all
+re: 			fclean all
 
-.PHONY: 	all clean fclean re
+.PHONY: 		all clean fclean re

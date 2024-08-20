@@ -6,27 +6,24 @@
 #    By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/10 16:12:25 by azinchen          #+#    #+#              #
-#    Updated: 2024/08/19 20:31:24 by azinchen         ###   ########.fr        #
+#    Updated: 2024/08/20 20:20:19 by azinchen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#How to put fucking tabs haha?
 # Standard
-NAME 		= push_swap
+NAME 				= 	push_swap
 
 # Directories
-LIBFT		= ./libft/libft.a
-INCLUDE		= include/
-SRC_DIR 	= src/
-OBJ_DIR 	= obj/
+LIBFT				= 	./libft/libft.a
+INCLUDE				= 	include/
+SRC_DIR 			= 	src/
+OBJ_DIR 			= 	obj/
 
 # Compiler and compilation flags
-CC 			= cc
-#or gcc?
-CFLAGS 		= -g -Wall -Wextra -Werror -I
-#chto za I? Chat GPT govorit napisat' prymo Iinclude kak flag
-RM			= rm -f
-AR			= ar rcs
+CC 					= 	cc
+CFLAGS 				= 	-g -Wall -Wextra -Werror -I
+RM					= 	rm -f
+AR					= 	ar rcs
 
 # Source Files
 OPERATIONS_DIR		=	$(SRC_DIR)operations/push.c \
@@ -44,31 +41,25 @@ LOGICS_DIR			=	$(SRC_DIR)logics/push_swap.c \
 										$(SRC_DIR)logics/stack_utils.c \
 										$(SRC_DIR)logics/error_utils.c
 
-SRC 		=	$(OPERATIONS_DIR) $(LOGICS_DIR)
+SRC 				=	$(OPERATIONS_DIR) $(LOGICS_DIR)
 
 # Object files         
-OBJ 		=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRC))
+OBJ 				=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRC))
 
 #Build rules
 
-#Something with libft, start (IDK)
-#Why for first 2 rules they're written on 2 lines and others on 1?
-
-# start:				
-# 	@make all
-
-all: 		$(NAME)
+all: 				$(NAME)
 
 $(LIBFT):
-			@make -C ./libft
+					@make -C ./libft
 
 
-$(NAME): 	$(OBJ) $(LIBFT)
-					@$(CC) $(CFLAGS) $(INCLUDE) $(OBJ) $(LIBFT) -o $(NAME)
+$(NAME): 			$(OBJ) $(LIBFT)
+							@$(CC) $(CFLAGS) $(INCLUDE) $(OBJ) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
-								@mkdir -p $(@D)
-								@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+							@mkdir -p $(@D)
+							@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 					@$(RM) -r $(OBJ_DIR)
