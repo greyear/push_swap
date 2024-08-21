@@ -6,7 +6,7 @@
 #    By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/10 16:12:25 by azinchen          #+#    #+#              #
-#    Updated: 2024/08/20 20:20:19 by azinchen         ###   ########.fr        #
+#    Updated: 2024/08/21 17:02:01 by azinchen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OPERATIONS_DIR		=	$(SRC_DIR)operations/push.c \
 										$(SRC_DIR)operations/rev_rotate.c
 						
 LOGICS_DIR			=	$(SRC_DIR)logics/push_swap.c \
-										$(SRC_DIR)logics/turk.c \
+										$(SRC_DIR)logics/sort_all.c \
 										$(SRC_DIR)logics/moving_costs.c \
 										$(SRC_DIR)logics/sort_three.c \
 										$(SRC_DIR)logics/creating_stack.c \
@@ -71,4 +71,4 @@ fclean: 			clean
 
 re: 				fclean all
 
-.PHONY: 			start all clean fclean re
+.PHONY: 			all clean fclean re

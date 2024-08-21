@@ -6,14 +6,14 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 15:46:42 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/19 20:38:35 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/21 17:32:50 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stddef.h>
+# include <stdlib.h>
 # include <limits.h>
 # include "../libft/include/libft.h"
 # include "../libft/include/ft_printf.h"
@@ -27,7 +27,7 @@ typedef struct s_stack
 	int					cost;
 }	t_stack;
 
-//Operations (bool??)
+//Operations
 void			sa(t_stack **a);
 void			sb(t_stack **b);
 void			ss(t_stack **a, t_stack **b);

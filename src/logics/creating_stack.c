@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 20:30:49 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/19 20:40:53 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/21 17:26:18 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ static int	ft_custom_atoi(const char *str, int *number)
 	return (0);
 }
 
-static void	add_node_back(t_stack **stack, int num)
+static int	add_node_back(t_stack **stack, int num)
 {
 	t_stack	*last_node;
 	t_stack	*new_node;
 
 	if (!stack)
-		return ;
+		return (1);
 	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
-		return ;
+		return (1);
 	new_node->n = num;
 	new_node->next = NULL;
 	if (!(*stack))
@@ -73,6 +73,7 @@ static void	add_node_back(t_stack **stack, int num)
 		last_node = last_elem(*stack);
 		last_node->next = new_node;
 	}
+	return (0);
 }
 
 void	create_stack(t_stack **stack, char **num, int clean_num)
@@ -91,7 +92,8 @@ void	create_stack(t_stack **stack, char **num, int clean_num)
 			cleanup_exit(stack, num, clean_num);
 		if (is_in_stack(*stack, n))
 			cleanup_exit(stack, num, clean_num);
-		add_node_back(stack, n);
+		if (add_node_back(stack, n) == 1)
+			cleanup_exit(stack, num, clean_num);
 		i++;
 	}
 	if (clean_num)

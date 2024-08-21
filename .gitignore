@@ -8,5 +8,6 @@
 .vscode
 push_swap
 checker_linux
+ps
 push_swap_tester
 obj

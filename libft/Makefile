@@ -6,7 +6,7 @@
 #    By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 12:03:15 by azinchen          #+#    #+#              #
-#    Updated: 2024/08/20 21:25:45 by azinchen         ###   ########.fr        #
+#    Updated: 2024/08/21 17:30:33 by azinchen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,7 @@ OBJ_DIR 		=	obj/
 
 # Compiler and compilation flags
 CC 				=	cc
-#or gcc?
 CFLAGS 			=	-Wall -Wextra -Werror -I
-#chto za I?
 RM				=	rm -f
 AR				=	ar rcs
 
