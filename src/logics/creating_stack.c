@@ -6,7 +6,7 @@
 /*   By: azinchen <azinchen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 20:30:49 by azinchen          #+#    #+#             */
-/*   Updated: 2024/08/21 17:26:18 by azinchen         ###   ########.fr       */
+/*   Updated: 2024/08/23 15:07:21 by azinchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ static int	add_node_back(t_stack **stack, int num)
 	t_stack	*last_node;
 	t_stack	*new_node;
 
-	if (!stack)
-		return (1);
 	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
 		return (1);
